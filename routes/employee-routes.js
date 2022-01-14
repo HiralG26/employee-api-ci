@@ -5,6 +5,12 @@ var router = Router();
 var empSvc = new EmployeeService();
 //GET http://localhost:5000/employees
 
+
+//get dummy change
+router.get("/demo", (req,res)=>{
+    res.status(200).json({'data': "sample data from demo" });
+})
+
 //get all emp
 router.get("/", async (req, res) => {
     let emps = await empSvc.getAllEmployees()
